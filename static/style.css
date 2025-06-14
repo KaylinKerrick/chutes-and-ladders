@@ -1,0 +1,22 @@
+/* background color and aligns all the text to the center */
+body{
+  background-color: #ffd6f0;
+  text-align: center;
+}
+
+/* changes title color and font */
+h1{
+  color:  #875db1;
+  font-family: "Lucida Handwriting";
+}
+
+/* changes the background color of the dice button */
+button{
+  background-color: #875db1;  
+  border-color:  #7b00a8;
+}
+
+h3{
+  color: #875db1;
+}
+

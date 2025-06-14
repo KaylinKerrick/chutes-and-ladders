@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- HTML code goes in here -->
+  <h1> Chutes & Ladders </h1>
+<p> Make it to the finish line in 10 turns to win! Roll the dice to begin...</p>
+<!-- displays the # of turns left -->
+  <h3>Turns left: {{turns}}</h3> 
+
+<!-- button that rolls the dice -->
+<form action = "click" method = "post">
+<button type = "submit" value = "dice" name = "dice">
+    <img src = "static/dice.png" alt = "dice image" width="50" height ="50"/></button>
+  <!--the button is an image of a six sided die -->
+  <br>
+  <br>
+  <input type="submit" value="RESET" name = "reset">
+
+<!-- When the button is clicked submitted = true in the main.py so this message will appear -->
+{% if submitted %}
+<p> You rolled a {{dice}}.</p>
+{% endif %}
+
+<!-- when you hit zero turns a you lose message will appear -->
+{% if session["turns"] == 0 %}
+<h1> You lose :( </h1>
+<p>Click the reset button to play again!</p>
+{% endif %}
+  
+<!-- when you make it to space 27 a you win message will appear -->
+{% if space >= 27 and turns > 0 %}
+<h1>You win!</h1>
+<p> <img src = "static/board27.png" alt = "board"/> </p>
+{% endif %}
+
+
+<!-- all of the code below is for the correct image of the board to pop up depending on the space you are on -->
+{% if space == 1 %}
+<p> <img src = "static/board1.png" alt = "starting board"/> </p>
+{% endif %}
+
+{% if space == 2 %}
+<p> <img src = "static/board2and11.png" alt = "board"/> </p>
+{% endif %}
+
+{% if space == 3 %}
+<p> <img src = "static/board3.png" alt = "board"/> </p>
+{% endif %}
+
+{% if space == 4 %}
+<p> <img src = "static/board4.png" alt = "board"/> </p>
+{% endif %}
+  
+{% if space == 5 %}
+<p> <img src = "static/board5.png" alt = "board"/> </p>
+{% endif %}
+
+  {% if space == 6 %}
+  <p> <img src = "static/board6.png" alt = "board"/> </p>
+  {% endif %}
+
+  {% if space == 7 %}
+  <p> <img src = "static/board7.png" alt = "board"/> </p>
+  {% endif %}
+
+  {% if space == 8 %}
+  <p> <img src = "static/board8and19.png" alt = "board"/> </p>
+  {% endif %}
+
+  {% if space == 9 %}
+  <p> <img src = "static/board9.png" alt = "board"/> </p>
+  {% endif %}
+
+  {% if space == 10 %}
+  <p> <img src = "static/board10.png" alt = "board"/> </p>
+  {% endif %}
+
+  {% if space == 16 %}
+  <p> <img src = "static/board12and16.png" alt = "board"/> </p>
+  {% endif %}
+
+  {% if space == 13 %}
+  <p> <img src = "static/board13.png" alt = "board"/> </p>
+  {% endif %}
+
+  {% if space == 14 %}
+  <p> <img src = "static/board14.png" alt = "board"/> </p>
+  {% endif %}
+
+  {% if space == 15 %}
+  <p> <img src = "static/board15and26.png" alt = "board"/> </p>
+  {% endif %}
+
+  {% if space == 17 %}
+  <p> <img src = "static/board17.png" alt = "board"/> </p>
+  {% endif %}
+
+  {% if space == 24 %}
+  <p> <img src = "static/board18and24.png" alt = "board"/> </p>
+  {% endif %}
+
+  {% if space == 20 %}
+  <p> <img src = "static/board20.png" alt = "board"/> </p>
+  {% endif %}
+
+  {% if space == 21 %}
+  <p> <img src = "static/board21.png" alt = "board"/> </p>
+  {% endif %}
+
+  {% if space == 22 %}
+  <p> <img src = "static/board22.png" alt = "board"/> </p>
+  {% endif %}
+
+  {% if space == 23 %}
+  <p> <img src = "static/board23.png" alt = "board"/> </p>
+  {% endif %}
+
+  {% if space == 25 %}
+  <p> <img src = "static/board25.png" alt = "board"/> </p>
+  {% endif %}
+
+
+  
+{% endblock %}
